@@ -8,7 +8,6 @@ import ReactLoading from "react-loading";
 const CORRECT_ANSWER_POINTS = 100;
 
 function StartGame({ username }) {
-  // const yesOrNoQuestion = useGetYesOrNoQuestion();
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [userAnwers, setUserAnwers] = useState([]);
@@ -72,10 +71,12 @@ function StartGame({ username }) {
   } else {
     return (
       <div>
-        <div className="strings score-continer">{`${localStorage.getItem(
+        <div className="strings">{`${localStorage.getItem(
           "username"
-        )} your score is: ${score} Points`}</div>
-        <Link to={"/"} className="links strings pointer">
+        )} your score is: ${score} Points \n Congratulations`}</div>
+        <img className="fireworks"></img>
+        <br></br>
+        <Link to={"/"} className="links strings pointer start-now">
           start new game
         </Link>
       </div>

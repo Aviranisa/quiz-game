@@ -90,6 +90,9 @@
   cursor: pointer;
 }
 
-.score-continer {
-  margin-bottom: 10px;
+.fireworks {
+  background-image: url("https://c.tenor.com/ZcA4VSUVn0IAAAAd/fireworks.gif");
+  height: 475px;
+  width: 500px;
+  border-radius: 50%;
 }
