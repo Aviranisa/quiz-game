@@ -1,38 +1,95 @@
 .App {
+  background-color: rgba(101, 174, 243, 0.703);
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 1px solid rgba(10, 9, 87, 0.749);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 8px;
+  height: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.AppHeader {
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-family: "Lucida Sans", Arial, sans-serif;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: "Lucida Sans", Arial, sans-serif;
+}
+
+.answer {
+  border: 1px solid rgba(10, 9, 87, 0.749);
+  margin: 10px;
+  cursor: pointer;
+  min-height: 30px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+.answer:hover {
+  background-color: azure;
+}
+
+.strings {
+  color: rgba(2, 1, 53, 0.749);
+  font-size: 1.1rem;
+  font-family: "Lucida Sans", Arial, sans-serif;
+}
+.rules {
+  width: 40rem;
+}
+
+.inputs {
+  width: 9rem;
+}
+
+.settings-inputs {
+  border-radius: 10px;
+}
+
+.buttons {
+  border: 10px;
+  background: none;
+  border-color: none;
+  cursor: pointer;
+}
+
+.name-inputs {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 5px;
+}
+.saveNameButton {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: none;
+  border-color: none;
+  cursor: pointer;
+}
+
+.links {
+  border: 1px solid rgba(10, 9, 87, 0.749);
+  border-radius: 10px;
+  padding: 4px;
+  text-decoration: none;
+  margin: 10px;
+  background: none;
+}
+.start-now {
+  background-color: rgb(44, 255, 128);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.score-continer {
+  margin-bottom: 10px;
 }
