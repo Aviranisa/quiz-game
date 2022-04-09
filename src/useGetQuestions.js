@@ -1,8 +1,6 @@
 import axios from "axios";
 import { useState, useMemo, useCallback, useEffect } from "react";
-import { getRandomNumbers, questionsType } from "./services/questionsService";
-
-const numOfQuestions = 10;
+import { getRandomNumbers } from "./services/questionsService";
 
 const useGetQuestions = (difficulty, amountQuestions, questionsType) => {
   const [allQuestions, setAllQuestions] = useState(null);
@@ -19,7 +17,7 @@ const useGetQuestions = (difficulty, amountQuestions, questionsType) => {
     );
     const questions = await res.data.results;
     setAllQuestions(questions);
-  }, [difficulty]);
+  }, [difficulty, amountQuestions, questionsType]);
 
   useMemo(async () => {
     const randomQuestions = [];
@@ -36,7 +34,7 @@ const useGetQuestions = (difficulty, amountQuestions, questionsType) => {
       });
       setGameQuestions(randomQuestions);
     }
-  }, [allQuestions]);
+  }, [allQuestions, amountQuestions, fetchAllQuestions]);
 
   return gameQuestions;
 };

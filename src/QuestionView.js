@@ -44,7 +44,7 @@ function QuestionView({
         {({ remainingTime }) => remainingTime}
       </CountdownCircleTimer>
     );
-  }, []);
+  }, [timersTime]);
 
   const possibleAnswersView = useMemo(() => {
     return possibleAnswers.map((possibleAnswer, i) => {

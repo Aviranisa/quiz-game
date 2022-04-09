@@ -74,7 +74,7 @@ function StartGame({ username }) {
         <div className="strings">{`${localStorage.getItem(
           "username"
         )} your score is: ${score} Points \n Congratulations`}</div>
-        <img className="fireworks"></img>
+        <img alt="" className="fireworks"></img>
         <br></br>
         <Link to={"/"} className="links strings pointer start-now">
           start new game

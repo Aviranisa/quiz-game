@@ -1,6 +1,7 @@
 import "./App.css";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { debounce } from "lodash-debounce";
 const SETTINGS_LINK = "Settings";
 const START_GAME_LINK = {
   to: "/StartGame",
@@ -57,7 +58,7 @@ function QuizMainPage() {
           type="text"
           className="name-inputs strings inputs"
           onChange={(e) => {
-            setUsername(e.target.value);
+            debounce(setUsername(e.target.value), 500);
           }}
         />
         <button
