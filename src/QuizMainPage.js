@@ -80,7 +80,7 @@ function QuizMainPage() {
     return RULES.map((rule, i) => {
       return (
         <ul>
-          <li className="strings" key={i}>
+          <li className="strings rules" key={i}>
             {rule}
           </li>
         </ul>

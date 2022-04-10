@@ -28,7 +28,7 @@ function QuestionView({
     setRepeatTimer(true);
   }, [questionIndex]);
 
-  const UrgeWithPleasureComponent = useMemo(() => {
+  const CountdownTimer = useMemo(() => {
     return (
       <CountdownCircleTimer
         isPlaying
@@ -38,7 +38,10 @@ function QuestionView({
         updateInterval={0}
         size={100}
         onComplete={(totalElapsedTime) => {
-          return { shouldRepeat: true, newInitialRemainingTime: timersTime };
+          return {
+            shouldRepeat: true,
+            newInitialRemainingTime: timersTime,
+          };
         }}
       >
         {({ remainingTime }) => remainingTime}
@@ -50,11 +53,18 @@ function QuestionView({
     return possibleAnswers.map((possibleAnswer, i) => {
       return (
         <div
-          onClick={() => {
+          onClick={(e) => {
+            let target = e.currentTarget;
             if (possibleAnswer.correct_answer) {
+              target.className = "strings correct_answer";
               userAnweredCorrectly();
+            } else {
+              target.className = "strings incorrect_answer";
             }
-            addUserAnswer(i + 1, timeoutId);
+            setTimeout(() => {
+              target.className = "answer strings pointer";
+              addUserAnswer(i + 1, timeoutId);
+            }, 700);
             setRepeatTimer(false);
           }}
           key={i}
@@ -62,7 +72,7 @@ function QuestionView({
         >{`${i + 1}. ${possibleAnswer.possibleAnswer}`}</div>
       );
     });
-  }, [possibleAnswers, addUserAnswer, userAnweredCorrectly, timeoutId]);
+  }, [/* addUserAnswer,*/ userAnweredCorrectly, timeoutId]);
   return !questionObj && possibleAnswers.length === 0 ? (
     <div>
       <div>Loading Question...</div>
@@ -71,10 +81,8 @@ function QuestionView({
       </div>
     </div>
   ) : (
-    <div>
-      {repeatTimer && (
-        <div className="progressTimerBar">{UrgeWithPleasureComponent}</div>
-      )}
+    <div className="game-continer">
+      {repeatTimer && <span>{CountdownTimer}</span>}
       <div className="strings header">{`${questionIndex}. ${questionObj.question}`}</div>
       {possibleAnswersView}
     </div>

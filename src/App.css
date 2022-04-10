@@ -37,13 +37,33 @@
   background-color: azure;
 }
 
+.correct_answer {
+  background-color: green;
+  border: 1px solid rgba(10, 9, 87, 0.749);
+  margin: 10px;
+  cursor: pointer;
+  min-height: 30px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+
+.incorrect_answer {
+  background-color: red;
+  border: 1px solid rgba(10, 9, 87, 0.749);
+  margin: 10px;
+  cursor: pointer;
+  min-height: 30px;
+  padding-top: 10px;
+  border-radius: 20px;
+}
+
 .strings {
   color: rgba(2, 1, 53, 0.749);
   font-size: 1.1rem;
   font-family: "Lucida Sans", Arial, sans-serif;
 }
 .rules {
-  width: 40rem;
+  width: 20rem;
 }
 
 .inputs {
@@ -89,10 +109,18 @@
 .pointer {
   cursor: pointer;
 }
+.pointer-not-allowed {
+  cursor: not-allowed;
+}
 
 .fireworks {
   background-image: url("https://c.tenor.com/ZcA4VSUVn0IAAAAd/fireworks.gif");
   height: 475px;
   width: 500px;
   border-radius: 50%;
+}
+.game-continer {
+  border-radius: 10px;
+  width: 20rem;
+  border: 1px solid rgba(10, 9, 87, 0.749);
 }
