@@ -19,6 +19,7 @@ function StartGame({ username }) {
     amountQuestions,
     questionsType
   );
+  const [anweredCorrectly, setAnsweredCorrectly] = useState(0);
 
   const moveToNextQuestion = useCallback(
     (timeoutId) => {
@@ -39,6 +40,7 @@ function StartGame({ username }) {
   );
   const userAnweredCorrectly = useCallback(() => {
     setScore(score + CORRECT_ANSWER_POINTS);
+    setAnsweredCorrectly(anweredCorrectly + 1);
   }, [score]);
 
   if (index < amountQuestions) {
@@ -73,7 +75,7 @@ function StartGame({ username }) {
       <div>
         <div className="strings">{`${localStorage.getItem(
           "username"
-        )} your score is: ${score} Points \n Congratulations`}</div>
+        )} you have answered correctly ${anweredCorrectly}/${amountQuestions} and your score is: ${score} Points Congratulations`}</div>
         <img alt="" className="fireworks"></img>
         <br></br>
         <Link to={"/"} className="links strings pointer start-now">

@@ -15,7 +15,6 @@ function QuestionView({
   const possibleAnswers = collectPossibleAnswers(questionObj);
   const [timeoutId, setTimeoutId] = useState();
   const [repeatTimer, setRepeatTimer] = useState(false);
-
   const createTimeout = () => {
     const timeoutID = setTimeout(() => {
       moveToNextQuestion();
