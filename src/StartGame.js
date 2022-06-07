@@ -11,6 +11,7 @@ function StartGame({ username }) {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [userAnwers, setUserAnwers] = useState([]);
+  debugger;
   const location = useLocation();
   const { difficulty, amountQuestions, questionsType, timersTime } =
     location.state;
